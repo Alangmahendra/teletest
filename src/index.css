@@ -12,3 +12,41 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.gradient {
+  background: #466368;
+  background: radial-gradient(#FEFEFE,#61BCC1);
+  /* border-radius: 6px;
+  height: 120px; */
+  width: 1360px;
+  height: 580px;
+}
+
+.yellowButton{
+  background: radial-gradient(#FEEC21,#E0A821);
+  border-radius: 200px;
+  height: 400px;
+  width: 400px;
+  align-items: center;
+}
+.yellowButton:hover{
+  background: radial-gradient(#e5d02d,#d19917);
+}
+
+.whiteSpace{
+  background-color: white;
+  width:300px;
+  height: 100px;
+}
+
+.flexContainer{
+  display: flex;
+  flex-wrap: nowrap;
+  
+}
+
+.ctx {
+  fill: #005184;
+  font-size: 25.1px;
+  font-weight: bold;
+}
