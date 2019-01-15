@@ -1,5 +1,5 @@
 
-const SAMPLE_SERVER_BASE_URL = 'http://35.240.241.28:3005/session'
+const SAMPLE_SERVER_BASE_URL = 'https://alangmahendra.com/api/room/session'
 
 const API_KEY = '';
 const SESSION_ID = '';
