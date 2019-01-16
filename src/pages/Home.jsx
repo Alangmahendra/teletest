@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import {Container,Row,Col} from 'reactstrap'
 import {Link} from 'react-router-dom'
-
-
+import kta from '../kta-logo.jpeg'
 // d="M250,400 a150,150 0 0,1 0,-300a150,150 0 0,1 0,300Z" transform="rotate(35,250,250)"
 
 export default class Home extends Component {
@@ -31,12 +30,24 @@ export default class Home extends Component {
         <Row>
           <Col>
           <div className="whiteSpace">
-            KLINIK KTA
+              <Row>
+              <Col>
+                <img src={kta} alt="logo"/>
+              </Col>
+              <Col>
+                    <Row>
+                    <div className="ktaFont kiri">KLINIK KTA</div> 
+                    </Row>
+                    <Row>
+                      <div className="ktaFont2 kiri2">SRENGSENG JUNCTION</div>
+                    </Row>
+              </Col>
+              </Row>
           </div>
           </Col>
           <Col>
-          <div className="whiteSpace">
-            KLINIK KTA
+          <div className="whiteSpace practech">
+            PRACTECH
           </div>
           </Col>
         </Row>

@@ -37,6 +37,7 @@ export default class Calling extends Component {
             console.log(`Publisher stream destroyed because: ${reason}`);
           },
         };
+        
     
         this.subscriberEventHandlers = {
           videoEnabled: () => {
@@ -77,36 +78,40 @@ export default class Calling extends Component {
         const { error, connection, publishVideo } = this.state;
         return (
           <div>
-            <div id="sessionStatus">Session Status: {connection}</div>
+            {/* <div id="sessionStatus">Session Status: {connection}</div> */}
             {error ? (
               <div className="error">
                 <strong>Error:</strong> {error}
               </div>
             ) : null}
-            <OTSession
+            <OTSession 
               apiKey={apiKey}
               sessionId={sessionId}
               token={token}
               onError={this.onSessionError}
               eventHandlers={this.sessionEventHandlers}
             >
-              <button id="videoButton" onClick={this.toggleVideo}>
-                {publishVideo ? 'Disable' : 'Enable'} Video
-              </button>
-              <OTPublisher
-                properties={{ publishVideo, width: 350, height: 300, }}
+              <div style={{display:"none !important",width:"0px",height:"0px",marginTop:"-70px",marginBottom:"20px"}}>
+              <OTPublisher className="layerMinus" style={{display:"none"}}
+                properties={{ publishVideo, width: "100%", height: "100%",insertMode:"append" }}
                 onPublish={this.onPublish}
                 onError={this.onPublishError}
                 eventHandlers={this.publisherEventHandlers}
               />
+              </div>
+              <div style={{marginTop:"68.5px"}}>
               <OTStreams>
-                <OTSubscriber
-                  properties={{ width: 350, height: 300 }}
+                <OTSubscriber className="layerPlus"
+                  properties={{publishVideo, width: 786, height: 386,insertMode:"append" }}
                   onSubscribe={this.onSubscribe}
                   onError={this.onSubscribeError}
                   eventHandlers={this.subscriberEventHandlers}
                 />
               </OTStreams>
+              </div>
+              {/* <button id="videoButton" onClick={this.toggleVideo}>
+                {publishVideo ? 'Disable' : 'Enable'} Video
+              </button> */}
             </OTSession>
           </div>
         );
